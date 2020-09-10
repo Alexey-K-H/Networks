@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 
 public class Main {
     private final static Logger logger = Logger.getLogger(Main.class.getName());
-
     public static long ipToLong(InetAddress ip){
         byte[] octets = ip.getAddress();
         long result = 0;
@@ -48,7 +47,6 @@ public class Main {
             else {
                 logger.log(Level.SEVERE, "Not a valid address!");
             }
-
         }
         else{
             logger.log(Level.SEVERE, "ERROR! Please enter argument multicast address!");

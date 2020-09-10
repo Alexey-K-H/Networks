@@ -1,12 +1,8 @@
-import java.io.IOException;
+import java.io.*;
 import java.net.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.*;
+import java.util.*;
+import java.util.logging.*;
 
 public class CopySearcher {
     private final static Logger logger = Logger.getLogger(CopySearcher.class.getName());
@@ -17,7 +13,6 @@ public class CopySearcher {
     private MulticastSocket multicastSocket;
     private DatagramSocket datagramSocket;
 
-
     public CopySearcher(String multicastIpAddr){
         try{
             group = InetAddress.getByName(multicastIpAddr);
@@ -27,6 +22,8 @@ public class CopySearcher {
             multicastSocket.setSoTimeout(receive_timeout);
         }
         catch (IOException ex){
+            multicastSocket.close();
+            datagramSocket.close();
             ex.printStackTrace();
         }
     }
@@ -54,6 +51,8 @@ public class CopySearcher {
                 checkCurrentIpTable();
             }
             catch (IOException ex){
+                multicastSocket.close();
+                datagramSocket.close();
                 ex.printStackTrace();
                 break;
             }
