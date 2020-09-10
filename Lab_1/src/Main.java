@@ -1,10 +1,6 @@
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import java.io.*;
+import java.net.*;
+import java.util.logging.*;
 
 public class Main {
     private final static Logger logger = Logger.getLogger(Main.class.getName());
