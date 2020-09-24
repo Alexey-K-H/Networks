@@ -1,0 +1,5 @@
+Sep 25, 2020 12:43:38 AM client.Main main
+SEVERE: ERROR! Wrong arguments! Required 3 args:
+1.file name
+2.server IP
+3.server port
